@@ -2,9 +2,8 @@
   "name": "portfolio",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=production harp server -p $PORT",
+    "start": "NODE_ENV=production harp server --port $PORT",
     "dev": "harp server"
   },
   "repository": {
