@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Talasan Nicholson - Full Stack Engineer</title>
 
 	<style>
@@ -34,18 +35,23 @@
 		padding: 100px;
 		background: var(--bg);
 	}
+		@media (max-width: 767px) {
+			body {
+				padding: 40px;
+			}
+		}
 
-	body:after {
-		z-index: 100;
-		content: '';
-		pointer-events: none;
-		position: fixed;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		border: 10px solid var(--default);
-	}
+		body:after {
+			z-index: 100;
+			content: '';
+			pointer-events: none;
+			position: fixed;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			border: 10px solid var(--default);
+		}
 
 	::selection {
 		color: #FFF;
@@ -112,9 +118,9 @@
 	main {
 		margin: auto;
 	}
-		@media (min-width: 767px) {
+		@media (min-width: 1000px) {
 			main {
-				max-width: 45%;
+				max-width: 30vw;
 			}
 		}
 
@@ -139,12 +145,9 @@
 		display: block;
 		position: relative;
 		font-size: 3rem;
-		margin: 0;
+		line-height: 1;
+		margin: 0 auto 10px;
 	}
-		h1.anim-in:after {
-			top: 15px;
-			bottom: 15px;
-		}
 
 	h2 {
 		font-size: 1.5rem;
@@ -217,7 +220,7 @@
 
 <main>
 	<hgroup>
-		<h1>Talasan Nicholson</h1>
+		<h1>Talasan<br />Nicholson</h1>
 		<h5>
 			[<a href="mailto:talasan.nicholson@gmail.com">email</a>
 			, <a href="//github.com/outthislife" target="_blank">github</a>
