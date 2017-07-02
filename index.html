@@ -32,6 +32,18 @@
 		background: var(--bg);
 	}
 
+	body:after {
+		z-index: 100;
+		content: '';
+		pointer-events: none;
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		border: 10px solid var(--default);
+	}
+
 	::selection {
 		color: #FFF;
 		background: #0000FF;
