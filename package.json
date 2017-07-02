@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/OutThisLife/portfolio/issues"
   },
-  "homepage": "https://github.com/OutThisLife/portfolio#readme"
+  "homepage": "https://github.com/OutThisLife/portfolio#readme",
+  "dependencies": {
+    "harp": "^0.24.0"
+  }
 }
