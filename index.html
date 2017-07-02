@@ -14,6 +14,38 @@
 		--bg: #F5F5F5;
 	}
 
+	@keyframes stagger {
+		from {
+			opacity: 0;
+			transform: translateY(-15px);
+		}
+
+		to {
+			opacity: 1;
+			transform: none;
+		}
+	}
+
+	@keyframes spaz {
+		0% {
+			font-family: serif;
+		}
+
+		33.33% {
+			font-family: sans-serif;
+		}
+
+		66.66% {
+			font-family: monospace;
+		}
+
+		100% {
+			font-family: cursive;
+		}
+	}
+
+	/* ----------------------------------- */
+
 	* {
 		box-sizing: border-box;
 	}
@@ -54,23 +86,10 @@
 		}
 
 	::selection {
-		color: #FFF;
-		background: #0000FF;
+		background: #f1f0d8;
 	}
 
 	/* ----------------------------------- */
-
-	@keyframes stagger {
-		from {
-			opacity: 0;
-			transform: translateY(-15px);
-		}
-
-		to {
-			opacity: 1;
-			transform: none;
-		}
-	}
 
 	main * {
 		opacity: 0;
@@ -108,6 +127,7 @@
 		left: 0;
 		filter: grayscale(1) blur(7px) opacity(.5);
 		transform: scaleX(-1);
+		transition: transform 3s linear;
 	}
 		#clone h1 {
 			filter: opacity(.4);
@@ -142,6 +162,7 @@
 	}
 
 	h1 {
+		cursor: default;
 		display: block;
 		position: relative;
 		font-size: 3rem;
@@ -150,17 +171,27 @@
 	}
 
 	h2 {
+		cursor: default;
 		font-size: 1.5rem;
 	}
 
 	h3 {
+		cursor: default;
 		font-size: .8rem;
 	}
 
 	h5 {
+		cursor: default;
 		font-weight: 400;
 		font-size: .8rem;
 		margin: 0;
+	}
+
+	h1:hover:first-letter,
+	h2:hover:first-letter,
+	h3:hover:first-letter,
+	h5:hover:first-letter {
+		color: blue;
 	}
 
 	hr {
@@ -364,6 +395,15 @@
 	const $clone = document.querySelector('main').cloneNode(true)
 	$clone.id = 'clone'
 	document.body.appendChild($clone)
+
+	document.addEventListener('disabled.mousemove', e => {
+		const
+			f = 0.065,
+			x = (-e.pageX / 2) * f,
+			y = (-e.pageY / 2) * f
+
+		$clone.style.transform = `translate(${x}px, ${y}px) scaleX(-1)`
+	})
 })()
 </script>
 
