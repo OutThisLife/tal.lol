@@ -17,25 +17,22 @@
 		box-sizing: border-box;
 	}
 
+	html {
+		color: var(--default);
+		font-size: 2vh;
+		line-height: 1.75;
+		font-family: Georgia, serif;
+	}
+
 	body {
 		display: flex;
 		min-height: 100vh;
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: center;
-		color: var(--default);
-		font-size: 1vw;
-		line-height: 1.75;
-		font-family: Georgia, serif;
 		margin: 0;
 		padding: 100px;
 		background: var(--bg);
-	}
-
-	@media (max-width: 1100px) {
-		body {
-			font-size: 13px;
-		}
 	}
 
 	body:after {
@@ -153,8 +150,13 @@
 		font-size: 1.5rem;
 	}
 
+	h3 {
+		font-size: .8rem;
+	}
+
 	h5 {
 		font-weight: 400;
+		font-size: .8rem;
 		margin: 0;
 	}
 
@@ -201,17 +203,14 @@
 		margin-bottom: 30px;
 	}
 
-	article h3 {
-		font-size: 12px;
+	article h3:only-child {
+		margin-bottom: -20px;
 	}
-		article h3:only-child {
-			margin-bottom: -20px;
-		}
 
-		article h3 time {
-			color: var(--faded);
-			font-weight: 400;
-		}
+	article h3 time {
+		color: var(--faded);
+		font-weight: 400;
+	}
 	</style>
 </head>
 <body>
