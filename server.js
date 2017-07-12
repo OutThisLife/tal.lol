@@ -4,9 +4,10 @@ import path from 'path'
 import { Server } from 'http'
 import Express from 'express'
 import compression from 'compression'
-
 import data from './data'
-import Index from './src/views/index'
+import Homepage from './src/pages/home'
+
+// -----------------------------------------------
 
 const
 	port = process.env.PORT || 3000,
@@ -21,11 +22,9 @@ app.use(compression())
 app.use(Express.static(path.join(__dirname, 'src')))
 
 app.get('/', (req, res) => {
-	const markup = renderToString(<Index {...data} />)
+	const markup = renderToString(<Homepage {...data} />)
 	return res.render('index', { markup })
 })
-
-app.get('/data', (req, res) => res.send(data))
 
 // -----------------------------------------------
 
