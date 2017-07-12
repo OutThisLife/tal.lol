@@ -20,7 +20,7 @@ app.set('views', path.join(__dirname, 'src'))
 app.use(compression())
 app.use(Express.static(path.join(__dirname, 'src')))
 
-app.get('/', async (req, res) => {
+app.get('/', (req, res) => {
 	const markup = renderToString(<Index {...data} />)
 	return res.render('index', { markup })
 })
