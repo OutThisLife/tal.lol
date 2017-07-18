@@ -13,7 +13,7 @@ export default class Links extends PureComponent {
 						target="_blank"
 						rel="noopener noreferrer"
 						dangerouslySetInnerHTML={{ __html: l }}
-					/>,&nbsp;
+					/>
 				</span>)
 			})}]
 		</h5>)
