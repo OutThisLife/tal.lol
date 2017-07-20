@@ -5,6 +5,7 @@
 	--border: rgba(0, 0, 0, .15);
 	--faded: rgba(0, 0, 0, .4);
 	--bg: #F5F5F5;
+	--shadow: blue;
 }
 
 @keyframes stagger {
@@ -61,7 +62,8 @@ body {
 	}
 
 ::selection {
-	background: #f1f0d8;
+	color: #FFF;
+	background: var(--default);
 }
 
 /* ----------------------------------- */
@@ -123,13 +125,17 @@ a {
 	display: inline-block;
 	color: var(--primary);
 	text-decoration: none;
-	background: linear-gradient(to right, var(--secondary), var(--secondary)) center 90% no-repeat;
-	background-size: 100% 2px;
+	background: linear-gradient(to right, rgba(0,0,0,.2) 50%, rgba(0,0,0,.2)) center 90% no-repeat;
+	background-size: 100% 1px;
 	will-change: background-size;
 }
 	a:hover {
 		color: #FFF;
-		background-size: 100% 30px;
+		background: var(--primary);
+	}
+
+	a:hover:focus {
+		background: var(--default);
 	}
 
 hgroup {
