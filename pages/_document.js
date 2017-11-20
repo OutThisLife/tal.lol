@@ -1,6 +1,6 @@
 import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet, injectGlobal } from 'styled-components'
-import styles from './global.scss'
+import styles from './globals.scss'
 
 injectGlobal`${styles}`
 
