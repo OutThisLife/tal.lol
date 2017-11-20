@@ -15,5 +15,11 @@ module.exports = {
     )
 
     return c
+  },
+
+  exportPathMap () {
+    return {
+      '/': { page: '/' }
+    }
   }
 }
