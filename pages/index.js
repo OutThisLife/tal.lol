@@ -1,6 +1,5 @@
 import { PureComponent } from 'react'
-import styled, { injectGlobal } from 'styled-components'
-import globalStyles from './globals.scss'
+import styled from 'styled-components'
 import styles from './styles.scss'
 import initProps from '../data'
 import Columns from '../components/columns'
@@ -8,7 +7,6 @@ import Links from '../components/links'
 import List from '../components/list'
 import Exp from '../components/exp'
 
-injectGlobal`${globalStyles}`
 const Main = styled.main`${styles}`
 
 export default class Index extends PureComponent {
