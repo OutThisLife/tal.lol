@@ -1,60 +1,46 @@
 {
-  "name": "portfolio",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
   "scripts": {
-    "start": "npm run build && node server-es5.js",
-    "dev": "cross-env NODE_ENV=development && npm run build:dev && nodemon --exec babel-node -- server.js",
-    "start:universal": "cross-env UNIVERSAL=true && npm run start",
-    "start:dev:universal": "cross-env NODE_ENV=development && cross-env UNIVERSAL=true && npm run start:dev",
-    "build": "cross-env NODE_ENV=production webpack -p",
-    "build:dev": "webpack -d",
-    "build:dev:watch": "webpack -d --watch",
-    "test": "eslint ."
+    "dev": "next",
+    "build": "next build",
+    "start": "serve out -p $PORT",
+    "heroku-postbuild": "next build && next export",
+    "test": "standard .",
+    "fix": "standard . --fix"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/OutThisLife/portfolio.git"
+  "engines": {
+    "node": "6.11.x",
+    "npm": "5.3.x"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/OutThisLife/portfolio/issues"
-  },
-  "homepage": "https://github.com/OutThisLife/portfolio#readme",
+  "license": "MIT",
   "dependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-core": "^6.25.0",
-    "babel-loader": "^7.1.1",
-    "babel-plugin-transform-regenerator": "^6.24.1",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.6.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-register": "^6.24.1",
-    "compression": "^1.6.2",
-    "cross-env": "^5.0.1",
-    "css-loader": "^0.28.4",
-    "ejs": "^2.5.6",
-    "express": "^4.15.3",
-    "extract-text-webpack-plugin": "^3.0.0",
-    "isomorphic-fetch": "^2.2.1",
-    "nodemon": "^1.11.0",
-    "prop-types": "^15.5.10",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "style-loader": "^0.18.2",
-    "webpack": "^3.2.0",
-    "webpack-dev-server": "^2.5.1",
-    "webpack-node-externals": "^1.6.0"
+    "babel-loader": "^7.1.2",
+    "eclint": "^2.5.0",
+    "load-script": "^1.0.0",
+    "next": "^4",
+    "postcss-loader": "^2.0.8",
+    "raw-loader": "^0.5.1",
+    "react": "^16",
+    "react-dom": "^16",
+    "serve": "^6.4.1",
+    "standard": "^10.0.3",
+    "styled-components": "^2"
   },
-  "devDependencies": {
-    "babel-eslint": "^7.2.3",
-    "eslint": "3.19.0",
-    "eslint-config-airbnb": "^15.0.2",
-    "eslint-plugin-import": "2.6.1",
-    "eslint-plugin-jsx-a11y": "5.1.1",
-    "eslint-plugin-react": "7.1.0",
-    "node-babel": "^0.1.2"
+  "cacheDirectories": [
+    "nextjs/node_modules"
+  ],
+  "standard": {
+    "globals": [
+      "location",
+      "navigator",
+      "analytics",
+      "localStorage",
+      "techan",
+      "d3",
+      "main",
+      "header",
+      "footer",
+      "zoom",
+      "TimelineLite"
+    ]
   }
 }
