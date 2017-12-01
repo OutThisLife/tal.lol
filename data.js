@@ -6,33 +6,31 @@ export default {
     medium: '//medium.com/@talasan'
   },
 
-  summary: 'Full stack web engineer that has worked closely with select clients for ~10 years in the ATX area. Focused on building beautiful websites and great user experiences.',
+  summary: 'I am a full stack engineer. I am primarily focused on crafting stunning sites with intuitive UX, with an intense passion for server/client performance as a feature.',
 
   highlights: [
-    'Transform design files (PSD, AI, Sketch) into HTML/CSS/JS',
-    'Advanced CSS3 animations <em>&amp;</em> transitions; GSAP',
-    'Mobile-first responsive development',
-    'Marketing performance optimization',
-    'UX and results driven',
-    'Systems planning <em>&amp;</em> integration',
-    'Solutions that scale'
+    'Pixel-perfect design to HTML',
+    'Advanced animations w/ GreenSock',
+    'Marketing optimization',
+    'Systems planning <em>&amp;</em> implementation',
+    'Team leading, organization',
+    'Has a Beagle.'
   ],
 
   skills: [
-    'JavaScript, HTML5/CSS3, OO PHP, SQL/NoSQL, Go, Ruby, Python, Java, C/C++',
+    'HTML/CSS/JS, SQL/NoSQL, PHP, Go, GraphQL',
+    'React, Angular, Vue, Gatsby',
     'Node, Apache, Nginx, Heroku',
-    'React, Angular, Vue, RxJS, jQuery, lodash, d3.js',
-    'Yarn/NPM, Grunt, Gulp, Bower',
-    'Laravel, Yii, Symfony, Ruby on Rails;',
-    'WordPress, Drupal, EE, Django',
-    'Photoshop, Illustrator, Sketch'
+    'Laravel, Yii, Symfony, Ruby on Rails',
+    'WordPress, Contentful, Drupal, EE, Django',
+    'Photoshop/Illustrator, Sketch, After Effects'
   ],
 
   experience: [
     {
       url: '//www.invisionapp.com',
       company: 'InVision',
-      position: 'Senior Marketing Engineer, <time>present</time>',
+      position: 'Sr. Full Stack Engineer, <time>current</time>',
       responsibilities: []
     },
 
@@ -104,18 +102,10 @@ export default {
   ],
 
   projects: [
-    'InVisionApp',
-    'DesignBetter',
-    'Yeti',
+    'InVision',
     'iFLY',
-    'Hudson Energy',
-    'YEI',
-    'Burt Watts',
-    'Silencer Shop',
-    'Junes All Day',
-    'Jeffrey`s',
-    'Josephine House',
-    'LaCondesa',
-    'JeSolar'
+    'Design Better',
+    'Yeti',
+    'AT&T'
   ]
 }
