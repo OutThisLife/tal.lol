@@ -27,7 +27,7 @@ export default {
 
   bio: `I am a full stack engineer and have been coding since I was ~12.
     My primary focus is to create beautiful, stunning experiences with the best designers available.
-    In tandem, I push keep perf. bottlenecks and cost near ~0.
+    In tandem, I push to keep perf. bottlenecks and cost near ~0.
   `,
 
   highlights: [
