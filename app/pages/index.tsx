@@ -2,6 +2,7 @@ import { Box, Divider, Heading, List, Text } from '@/components/elements'
 import Exp from '@/components/exp'
 import Links from '@/components/links'
 import { DataProps } from '@/lib/data'
+import styled from 'styled-components'
 
 export default ({
   links,
@@ -11,12 +12,11 @@ export default ({
   experience,
   projects = []
 }: DataProps) => (
-  <Box
+  <Main
     is="main"
     display="grid"
     gridTemplateColumns="repeat(40, 1fr)"
     paddingY="calc(1.5vmin * 10)"
-    maxWidth="80vw"
     margin="auto">
     <Box is="hgroup" gridColumn="6 / -6" textAlign="center">
       <Heading is="h1" fontSize="4rem" paddingBottom={0}>
@@ -71,5 +71,25 @@ export default ({
         <List items={projects} />
       </Box>
     </Box>
-  </Box>
+  </Main>
 )
+
+const Main = styled(Box)`
+  max-width: 80vw;
+
+  @media (max-width: 767px) {
+    max-width: 100vw;
+
+    hgroup {
+      grid-column: 3 / -3;
+    }
+
+    section:first-of-type {
+      grid-column: 4 / -4;
+    }
+
+    section:last-of-type {
+      grid-column: 5 / -5;
+    }
+  }
+`
