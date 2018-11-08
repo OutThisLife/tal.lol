@@ -1,46 +1,47 @@
 {
-  "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "serve out -p $PORT",
-    "heroku-postbuild": "next build && next export",
-    "test": "standard .",
-    "fix": "standard . --fix"
-  },
-  "engines": {
-    "node": "6.11.x",
-    "npm": "5.3.x"
-  },
+  "name": "talasan.co",
+  "version": "1.0.0",
+  "main": "index.js",
   "license": "MIT",
-  "dependencies": {
-    "babel-loader": "^7.1.2",
-    "eclint": "^2.5.0",
-    "load-script": "^1.0.0",
-    "next": "^4",
-    "postcss-loader": "^2.0.8",
-    "raw-loader": "^0.5.1",
-    "react": "^16",
-    "react-dom": "^16",
-    "serve": "^6.4.1",
-    "standard": "^10.0.3",
-    "styled-components": "^2"
+  "scripts": {
+    "dev": "next ./app",
+    "start": "serve ./app/out",
+    "build": "next build ./app && next export ./app",
+    "postinstall": "[ $NODE_ENV = production ] && npm run build || exit 0"
   },
-  "cacheDirectories": [
-    "nextjs/node_modules"
-  ],
-  "standard": {
-    "globals": [
-      "location",
-      "navigator",
-      "analytics",
-      "localStorage",
-      "techan",
-      "d3",
-      "main",
-      "header",
-      "footer",
-      "zoom",
-      "TimelineLite"
-    ]
+  "dependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-transform-runtime": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-typescript": "^1.1.1",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "next": "^7.0.2",
+    "next-compose-plugins": "^2.1.1",
+    "next-offline": "^3.0.4",
+    "polished": "^2.3.0",
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1",
+    "recompose": "^0.30.0",
+    "serve": "^10.0.2",
+    "styled-components": "^4.0.3",
+    "ui-box": "^1.4.0",
+    "url-loader": "^1.1.2"
+  },
+  "devDependencies": {
+    "@types/next": "^7.0.3",
+    "@types/react": "^16.4.18",
+    "@types/react-dom": "^16.0.9",
+    "@types/recompose": "^0.27.0",
+    "@types/styled-components": "^4.0.3",
+    "@types/typescript": "^2.0.0",
+    "babel-plugin-styled-components": "^1.8.0",
+    "prettier-eslint-cli": "^4.7.1",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "types-installer": "^1.4.0",
+    "typescript": "^3.1.6",
+    "typescript-eslint-parser": "^20.1.1",
+    "typescript-styled-plugin": "^0.12.0"
   }
 }
