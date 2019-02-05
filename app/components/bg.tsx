@@ -134,19 +134,18 @@ export default compose<TInner & TState, {}>(
         grid()
       }
 
-      d3.select(document.body)
-        .on('resize', onResize)
-        .on('mousemove', () => {
-          mouse.x = d3.event.clientX
-          mouse.y = d3.event.clientY
-        })
+      d3.select(document.body).on('mousemove', () => {
+        mouse.x = d3.event.clientX
+        mouse.y = d3.event.clientY
+      })
 
       window.requestAnimationFrame(onResize)
+      window.addEventListener('resize', onResize)
 
       tm = d3.timer(draw)
     }
   }))
-)(({ onRef, width = 100, height = 100 }) => (
+)(({ onRef, width, height }) => (
   <canvas
     ref={onRef}
     id="bg-grid"
@@ -157,7 +156,9 @@ export default compose<TInner & TState, {}>(
       pointerEvents: 'none',
       position: 'fixed',
       top: 0,
-      left: 0
+      left: 0,
+      width,
+      height
     }}
   />
 ))
