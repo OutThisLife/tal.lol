@@ -1,3 +1,4 @@
+import { invert } from 'polished'
 import { compose, defaultProps, setDisplayName } from 'recompose'
 import styled, { css, withTheme } from 'styled-components'
 import Box from 'ui-box'
@@ -38,7 +39,7 @@ export default styled(Link)`
       background: ${theme.primary};
 
       &:focus {
-        background: ${theme.base};
+        background: ${invert(theme.primary)};
       }
     }
   `}

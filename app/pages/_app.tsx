@@ -1,3 +1,4 @@
+import BG from '@/components/bg'
 import data from '@/lib/data'
 import App, { Container } from 'next/app'
 import Head from 'next/head'
@@ -11,18 +12,22 @@ export default class extends App {
       <Container>
         <ThemeProvider
           theme={{
-            base: '#111',
-            primary: 'blue',
-            secondary: '#EC0006',
-            border: 'rgba(0, 0, 0, .15)',
-            faded: 'rgba(0, 0, 0, .4)',
-            bg: '#FFF'
+            base: '#000',
+            bg: '#fff',
+            primary: 'blue'
           }}>
           <>
             <Head>
-              <title>Talasan Nicholson | Coding since I was 12</title>
+              <title key="title">Talasan Nicholson</title>
+
+              <meta
+                key="desc"
+                name="desc"
+                content="I am a full stack engineer and have been coding since I was ~12."
+              />
             </Head>
 
+            <BG />
             <Component {...data} />
             <GlobalStyles />
           </>
@@ -61,7 +66,7 @@ const GlobalStyles = createGlobalStyle`
         right: 0;
         bottom: 0;
         left: 0;
-        border: 1.5vw solid ${theme.base};
+        border: 1vmax solid ${theme.primary};
       }
     }
 

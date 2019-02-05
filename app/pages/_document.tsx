@@ -30,7 +30,7 @@ export default class extends Document<{ styleTags: React.ReactNode[] }> {
       <html lang="en-US">
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta name="robots" content="index" />
+          <meta name="robots" content="index,follow" />
           <meta name="canonical" content="//www.talasan.co" />
 
           <link rel="shortcut icon" href={favicon} />

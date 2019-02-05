@@ -1,3 +1,4 @@
+import { rgba } from 'polished'
 import { compose, defaultProps, setDisplayName } from 'recompose'
 import { withTheme } from 'styled-components'
 import Box from 'ui-box'
@@ -15,5 +16,5 @@ export default compose<T, U>(
     borderTop: '0px'
   })
 )(({ theme, ...props }) => (
-  <Box borderBottom={`1px solid ${theme.border}`} {...props} />
+  <Box borderBottom={`1px solid ${rgba(theme.base, 0.2)}`} {...props} />
 ))
