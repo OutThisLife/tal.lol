@@ -14,7 +14,7 @@ export default class extends App {
           theme={{
             base: '#000',
             bg: '#fff',
-            primary: 'blue'
+            primary: '#00f'
           }}>
           <>
             <Head>
@@ -43,6 +43,20 @@ const GlobalStyles = createGlobalStyle`
   }
 
   ${({ theme }: any) => css`
+    ::-webkit-scrollbar {
+      width: 3px;
+      height: 3px;
+      background: ${theme.primary};
+    }
+
+    ::-webkit-scrollbar-track {
+      background: ${theme.primary};
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: ${theme.bg};
+    }
+
     html {
       color: ${theme.base};
       font-size: 1.45vmax;

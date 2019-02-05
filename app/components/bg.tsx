@@ -39,7 +39,7 @@ export default compose<TInner & TState, {}>(
       } else if (
         navigator.maxTouchPoints ||
         window.innerWidth <= 1024 ||
-        !/(?=.*Safari)(?=.*Chrome).*/i.test(navigator.userAgent)
+        !/((?=.*Safari)(?=.*Chrome))|(?=.*Mozilla).*/i.test(navigator.userAgent)
       ) {
         ref.remove()
       } else if (typeof tm === 'object' && 'stop' in tm) {
@@ -69,9 +69,6 @@ export default compose<TInner & TState, {}>(
         ctx.clearRect(0, 0, cv.width, cv.height)
 
         const size = cv.width / 25
-        const midX = cv.width / 2
-        const midY = cv.height / 2
-        const circ = Math.PI * 2
 
         const jumps = () => {
           ctx.beginPath()
