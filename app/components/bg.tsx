@@ -108,7 +108,7 @@ export default compose<TInner & TState, {}>(
         }
 
         const spotlight = () => {
-          const r = Math.max(cv.width, cv.height) / 2
+          const r = Math.max(cv.width, cv.height) / 4
           const x = mouse.x - r / 2
           const y = mouse.y - r / 2
 
@@ -131,15 +131,31 @@ export default compose<TInner & TState, {}>(
         grid()
       }
 
-      d3.select(document.body).on('mousemove', () => {
-        mouse.x = d3.event.clientX
-        mouse.y = d3.event.clientY
-      })
+      try {
+        d3.select(document.body).on('mousemove', () => {
+          const m = d3.event
 
-      window.requestAnimationFrame(onResize)
-      window.addEventListener('resize', onResize)
+          d3.select(cv)
+            .transition()
+            .duration(75)
+            .ease(d3.easeCircle)
+            .tween('data', () => {
+              const x = d3.interpolateNumber(mouse.x, m.clientX)
+              const y = d3.interpolateNumber(mouse.y, m.clientY)
 
-      tm = d3.timer(draw)
+              return i => {
+                mouse.x = x(i)
+                mouse.y = y(i)
+              }
+            })
+        })
+
+        tm = d3.timer(draw)
+        window.requestAnimationFrame(onResize)
+        window.addEventListener('resize', onResize)
+      } catch (err) {
+        console.trace(err)
+      }
     }
   }))
 )(({ onRef, width, height }) => (
