@@ -17,7 +17,7 @@
     "lib": ["dom", "es2017"],
     "typeRoots": ["./node_modules/@types"],
     "paths": {
-      "@/*": ["app/*"]
+      "@/*": ["./*"]
     },
     "plugins": [
       {
@@ -25,6 +25,6 @@
       }
     ]
   },
-  "include": ["app/**/*"],
-  "exclude": ["**/*.spec", "app/out/**", "app/.next/**"]
+  "include": ["./**/*", "out", "pages", "lib"],
+  "exclude": ["**/*.spec", "out/**", "./.next/**"]
 }

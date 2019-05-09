@@ -11,9 +11,7 @@ const plugins = [
 ]
 
 const config = {
-  publicRuntimeConfig: {
-    isDev: process.env.NODE_ENV !== 'production'
-  },
+  target: 'serverless',
   webpack(config) {
     config.module.rules.push({
       test: /\.(png|jpg|gif|svg|ico)$/i,

@@ -4,9 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "next ./app",
-    "start": "serve ./app/out",
-    "build": "next build ./app && next export ./app",
+    "dev": "next",
+    "start": "serve out",
+    "build": "next build && next export",
+    "deploy": "now",
     "postinstall": "[ $NODE_ENV = production ] && npm run build || exit 0"
   },
   "dependencies": {
