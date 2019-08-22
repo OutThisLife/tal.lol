@@ -1,24 +1,26 @@
 import { Box, Divider, Heading, List, Text } from '@/components/elements'
 import Exp from '@/components/exp'
 import Links from '@/components/links'
-import { DataProps } from '@/lib/data'
+import data from '@/lib/data'
 import styled from 'styled-components'
 
-export default ({
+const {
   links,
   bio,
   highlights = [],
   skills = [],
   experience,
   projects = []
-}: DataProps) => (
+} = data
+
+export default () => (
   <Main
     is="main"
     display="grid"
     gridTemplateColumns="repeat(40, 1fr)"
     paddingY="calc(1.5vmin * 10)"
     margin="auto">
-    <Box is="hgroup" gridColumn="6 / -6" textAlign="center">
+    <Box placeSelf="auto" is="hgroup" gridColumn="6 / -6" textAlign="center">
       <Heading is="h1" fontSize="4rem" paddingBottom={0}>
         Talasan
         <br />
@@ -36,28 +38,30 @@ export default ({
     </Box>
 
     <Box
+      placeSelf="auto"
       is="section"
       gridColumn="9 / -9"
       display="inherit"
       gridTemplateColumns="inherit"
       marginBottom="calc(2.5vmax * 3)">
-      <Box gridRow={1} gridColumn="1 / 19">
+      <Box placeSelf="auto" gridRow={1} gridColumn="1 / 19">
         <Heading>Brief.</Heading>
         <List items={highlights} />
       </Box>
 
-      <Box gridRow={1} gridColumn="-1 / -21" textAlign="right">
+      <Box placeSelf="auto" gridRow={1} gridColumn="-1 / -21" textAlign="right">
         <Heading>Tech.</Heading>
         <List items={skills} />
       </Box>
     </Box>
 
     <Box
+      placeSelf="auto"
       is="section"
       gridColumn="10 / -10"
       display="inherit"
       gridTemplateColumns="inherit">
-      <Box gridRow={1} gridColumn="1 / 30">
+      <Box placeSelf="auto" gridRow={1} gridColumn="1 / 30">
         <Heading>Exp.</Heading>
 
         {experience.map((exp, i) => (
@@ -65,9 +69,8 @@ export default ({
         ))}
       </Box>
 
-      <Box gridRow={1} gridColumn="-1 / -10" textAlign="right">
+      <Box placeSelf="auto" gridRow={1} gridColumn="-1 / -10" textAlign="right">
         <Heading>Collab.</Heading>
-
         <List items={projects} />
       </Box>
     </Box>

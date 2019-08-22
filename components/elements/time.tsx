@@ -1,16 +1,13 @@
+import useTheme from '@/lib/useTheme'
 import { rgba } from 'polished'
-import { compose, defaultProps, setDisplayName } from 'recompose'
-import { withTheme } from 'styled-components'
 import Box from 'ui-box'
 
-import { T, U } from '.'
+const Time = props => <Box color={rgba(useTheme().base, 0.5)} {...props} />
 
-export default compose<T, U>(
-  setDisplayName('timestamp'),
-  withTheme,
-  defaultProps({
-    is: 'time',
-    fontSize: 'inherit',
-    margin: 0
-  })
-)(({ theme, ...props }) => <Box color={rgba(theme.base, 0.5)} {...props} />)
+Time.defaultProps = {
+  is: 'time',
+  fontSize: 'inherit',
+  margin: 0
+}
+
+export default Time

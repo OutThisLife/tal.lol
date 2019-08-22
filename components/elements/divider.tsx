@@ -1,20 +1,21 @@
+import useTheme from '@/lib/useTheme'
 import { rgba } from 'polished'
-import { compose, defaultProps, setDisplayName } from 'recompose'
-import { withTheme } from 'styled-components'
 import Box from 'ui-box'
 
-import { T, U } from '.'
+const Divider = props => (
+  <Box
+    placeSelf="auto"
+    borderBottom={`1px solid ${rgba(useTheme().base, 0.2)}`}
+    {...props}
+  />
+)
 
-export default compose<T, U>(
-  setDisplayName('divider'),
-  withTheme,
-  defaultProps({
-    is: 'hr',
-    width: '3rem',
-    marginY: '4vmax',
-    marginX: 'auto',
-    borderTop: '0px'
-  })
-)(({ theme, ...props }) => (
-  <Box borderBottom={`1px solid ${rgba(theme.base, 0.2)}`} {...props} />
-))
+Divider.defaultProps = {
+  is: 'hr',
+  width: '3rem',
+  marginY: '4vmax',
+  marginX: 'auto',
+  borderTop: '0px'
+}
+
+export default Divider

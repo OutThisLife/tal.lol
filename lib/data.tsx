@@ -1,22 +1,3 @@
-export interface DataProps {
-  links: {
-    [key: string]: string
-  }
-
-  bio: string
-  highlights: string[]
-  skills: string[]
-  experience: Array<{
-    url: string
-    date: string
-    company: string
-    position: string
-    responsibilities?: string[]
-  }>
-
-  projects: string[]
-}
-
 export default {
   links: {
     goog: 'mailto:talasan.nicholson@gmail.com',
@@ -109,4 +90,4 @@ export default {
   ],
 
   projects: ['InVisionApp', 'iFLY', 'designbetter', 'Yeti Coolers ', 'AT&T']
-} as DataProps
+}

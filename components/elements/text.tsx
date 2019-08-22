@@ -1,13 +1,11 @@
-import { compose, defaultProps, setDisplayName } from 'recompose'
 import Box from 'ui-box'
 
-import { T, U } from '.'
+const Text = props => <Box placeSelf="auto" {...props} />
 
-export default compose<T, U>(
-  setDisplayName('text'),
-  defaultProps({
-    is: 'p',
-    fontSize: '1rem',
-    margin: 0
-  })
-)(props => <Box {...props} />)
+Text.defaultProps = {
+  is: 'p',
+  fontSize: '1rem',
+  margin: 0
+}
+
+export default Text
