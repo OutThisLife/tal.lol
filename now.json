@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "name": "talasan.co",
-  "alias": ["talasan.co", "www.talasan.co"],
+  "name": "talasan.dev",
+  "alias": ["talasan.dev", "www.talasan.dev"],
   "builds": [
     {
       "src": "next.config.js",
