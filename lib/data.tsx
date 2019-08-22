@@ -19,7 +19,7 @@ export default {
   ],
 
   skills: [
-    'JS, Go, Rust, PHP, GLSL',
+    'JS/TS, Go, Rust, PHP, GLSL',
     'Next.js, Gatsby, headless cms',
     'sql, graphql',
     'Ps, Ai, Sketch'
@@ -89,5 +89,12 @@ export default {
     }
   ],
 
-  projects: ['InVisionApp', 'iFLY', 'designbetter', 'Yeti Coolers ', 'AT&T']
+  projects: [
+    'Drinkworks',
+    'InVisionApp',
+    'iFLY',
+    'designbetter',
+    'Yeti Coolers ',
+    'AT&T'
+  ]
 }
