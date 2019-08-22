@@ -5,7 +5,6 @@ import { extractStyles } from 'ui-box'
 export default class extends Document<{ styleTags: React.ReactNode[] }> {
   public static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet()
-    const { styles, cache } = extractStyles()
     const originalRenderPage = ctx.renderPage
 
     try {
@@ -15,6 +14,7 @@ export default class extends Document<{ styleTags: React.ReactNode[] }> {
         })
 
       const initialProps = await Document.getInitialProps(ctx)
+      const { styles, cache } = extractStyles()
 
       return {
         ...initialProps,
