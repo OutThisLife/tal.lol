@@ -7,8 +7,7 @@
     "dev": "next",
     "start": "serve out",
     "build": "next build && next export",
-    "deploy": "now",
-    "postinstall": "[ $NODE_ENV = production ] && npm run build || exit 0"
+    "deploy": "now"
   },
   "dependencies": {
     "@babel/core": "^7.1.2",
