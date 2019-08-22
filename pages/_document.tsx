@@ -5,7 +5,7 @@ import { extractStyles } from 'ui-box'
 export default class extends Document<{ styleTags: React.ReactNode[] }> {
   public static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet()
-    const boxSheet = extractStyles()
+    const { styles, cache } = extractStyles()
     const originalRenderPage = ctx.renderPage
 
     try {
@@ -18,11 +18,18 @@ export default class extends Document<{ styleTags: React.ReactNode[] }> {
 
       return {
         ...initialProps,
+        scripts: (
+          <>
+            <script type="application/json" id="ui-box-cache">
+              ${JSON.stringify(cache)}
+            </script>
+          </>
+        ),
         styles: (
           <>
             {initialProps.styles}
             {sheet.getStyleElement()}
-            <style>{boxSheet.styles}</style>
+            <style>{styles}</style>
           </>
         )
       }
