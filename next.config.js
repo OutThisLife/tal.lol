@@ -6,7 +6,7 @@ const { PHASE_DEVELOPMENT_SERVER } = require('next/constants')
 module.exports = withPlugins(
   [withCSS, [offline, ['!', PHASE_DEVELOPMENT_SERVER]]],
   {
-    target: 'serverless',
+    target: 'server',
     webpack(config) {
       config.module.rules.push({
         test: /\.(png|jpg|gif|svg|ico)$/i,
