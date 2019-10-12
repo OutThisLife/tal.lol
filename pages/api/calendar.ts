@@ -21,7 +21,7 @@ export default (_: NextApiRequest, res: NextApiResponse) => {
         return lastV
       },
 
-      slice: (v, n: number) => (typeof v === 'string' ? v.slice(n) : v),
+      slice: (v, n) => (typeof v === 'string' ? v.slice(parseInt(n, 10)) : v),
 
       clean: v => {
         if (typeof v !== 'string') {
