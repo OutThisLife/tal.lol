@@ -16,6 +16,8 @@
     "@zeit/next-css": "^1.0.1",
     "babel-plugin-module-resolver": "^3.1.1",
     "d3": "^5.11.0",
+    "ical-generator": "^1.8.1",
+    "moment": "^2.24.0",
     "next": "^9.0.4",
     "next-compose-plugins": "^2.2.0",
     "next-offline": "^4.0.5",
@@ -27,15 +29,18 @@
     "styled-theme": "^0.3.3",
     "styled-tools": "^1.7.1",
     "ui-box": "^2.1.1",
-    "url-loader": "^2.1.0"
+    "url-loader": "^2.1.0",
+    "x-ray": "^2.3.4"
   },
   "devDependencies": {
+    "@types/cheerio": "^0.22.13",
     "@types/d3": "^5.7.0",
     "@types/next": "^7.0.3",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
     "@types/styled-components": "^4.1.18",
     "@types/typescript": "^2.0.0",
+    "@types/x-ray": "^2.3.3",
     "babel-plugin-styled-components": "^1.8.0",
     "prettier-eslint-cli": "^4.7.1",
     "tslint": "^5.19.0",

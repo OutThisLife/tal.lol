@@ -74,17 +74,19 @@ export default () => {
 
       const spotlight = () => {
         const r = Math.max(cv.width, cv.height) / 4
-        const x = mouse.x - r / 2
-        const y = mouse.y - r / 2
+        const x = mouse.x
+        const y = mouse.y
 
         ctx.globalCompositeOperation = 'xor'
-        ctx.filter = `blur(${size / 2}px)`
+        ctx.filter = `blur(${size * 2}px)`
 
-        ctx.fillStyle = '#fff'
+        ctx.fillStyle = '#ffffffdd'
         ctx.fillRect(0, 0, cv.width, cv.height)
 
-        ctx.fillStyle = 'rgba(0,0,255,.1)'
-        ctx.fillRect(x, y, r, r)
+        ctx.beginPath()
+        ctx.arc(x, y, r, 0, 2 * Math.PI, false)
+        ctx.fillStyle = '#fff'
+        ctx.fill()
 
         ctx.filter = 'none'
         ctx.fillStyle = 'transparent'
@@ -98,68 +100,65 @@ export default () => {
     [$canvas]
   )
 
-  useEffect(
-    () => {
-      if (
-        !('browser' in process || $canvas.current instanceof HTMLCanvasElement)
-      ) {
-        return
-      }
+  useEffect(() => {
+    if (
+      !('browser' in process || $canvas.current instanceof HTMLCanvasElement)
+    ) {
+      return
+    }
 
-      const cv = $canvas.current
-      const ctx = cv.getContext('2d')
+    const cv = $canvas.current
+    const ctx = cv.getContext('2d')
 
-      if (
-        navigator.maxTouchPoints ||
-        window.innerWidth <= 1024 ||
-        !/((?=.*Safari)(?=.*Chrome))|(?=.*Mozilla).*/i.test(navigator.userAgent)
-      ) {
-        $canvas.current.remove()
-        return
-      }
+    if (
+      navigator.maxTouchPoints ||
+      window.innerWidth <= 1024 ||
+      !/((?=.*Safari)(?=.*Chrome))|(?=.*Mozilla).*/i.test(navigator.userAgent)
+    ) {
+      $canvas.current.remove()
+      return
+    }
 
-      if (typeof tm === 'object' && 'stop' in tm) {
-        tm.stop()
-      }
+    if (typeof tm === 'object' && 'stop' in tm) {
+      tm.stop()
+    }
 
-      const mouse = { x: 0, y: 0 }
-      const args = { cv, ctx, mouse }
+    const mouse = { x: 0, y: 0 }
+    const args = { cv, ctx, mouse }
 
-      try {
-        d3.select(document.body).on('mousemove', () => {
-          const m = d3.event
+    try {
+      d3.select(document.body).on('mousemove', () => {
+        const m = d3.event
 
-          d3.select($canvas.current)
-            .transition()
-            .duration(75)
-            .ease(d3.easeCircle)
-            .tween('data', () => {
-              const x = d3.interpolateNumber(mouse.x, m.clientX)
-              const y = d3.interpolateNumber(mouse.y, m.clientY)
+        d3.select($canvas.current)
+          .transition()
+          .duration(0.2)
+          .ease(d3.easeCircle)
+          .tween('data', () => {
+            const x = d3.interpolateNumber(mouse.x, m.clientX)
+            const y = d3.interpolateNumber(mouse.y, m.clientY)
 
-              return i => {
-                mouse.x = x(i)
-                mouse.y = y(i)
-              }
-            })
-        })
+            return i => {
+              mouse.x = x(i)
+              mouse.y = y(i)
+            }
+          })
+      })
 
-        window.requestAnimationFrame(() => {
-          handleResize(args)
-          tm = d3.timer(draw.bind(null, args))
-        })
+      window.requestAnimationFrame(() => {
+        handleResize(args)
+        tm = d3.timer(draw.bind(null, args))
+      })
 
-        window.addEventListener('resize', handleResize.bind(null, args))
-      } catch (err) {
-        console.trace(err)
-      }
+      window.addEventListener('resize', handleResize.bind(null, args))
+    } catch (err) {
+      console.trace(err)
+    }
 
-      return () => {
-        window.removeEventListener('resize', handleResize.bind(null, args))
-      }
-    },
-    [$canvas]
-  )
+    return () => {
+      window.removeEventListener('resize', handleResize.bind(null, args))
+    }
+  }, [$canvas])
 
   return (
     <canvas
