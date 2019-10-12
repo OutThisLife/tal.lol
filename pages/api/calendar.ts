@@ -54,11 +54,7 @@ export default (_: NextApiRequest, res: NextApiResponse) => {
     ])
   )
     .then(render(res))
-    .catch(err => {
-      console.error(err)
-      res.status(500)
-      res.send(err)
-    })
+    .catch(err => res.status(500).end(err))
 }
 
 const render = (res: NextApiResponse) => (data: Item[] = []) => {
@@ -73,8 +69,7 @@ const render = (res: NextApiResponse) => (data: Item[] = []) => {
       name: 'FX Calendar',
       prodId: { company: 'talasan', product: 'fx-cal' },
       events: data
-        .filter(d => d.title)
-        .filter(d => /high|medium/i.test(d.impact))
+        .filter(d => d.title && /high|medium/i.test(d.impact))
         .map(({ currency, date, impact, time, title }) => {
           try {
             const summary = `${currency} - ${impact} - ${title}`
@@ -94,7 +89,6 @@ const render = (res: NextApiResponse) => (data: Item[] = []) => {
               summary
             }
           } catch (e) {
-            console.error(e)
             return null
           }
         })
