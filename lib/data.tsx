@@ -37,7 +37,7 @@ export default {
       url: '//www.invisionapp.com',
       company: 'InVisionApp',
       position: 'Sr. Full Stack',
-      date: '2016-2020'
+      date: '2017-2020'
     },
 
     {
