@@ -84,7 +84,6 @@ const render = (res: NextApiResponse) => (data: Item[] = []) => {
             return {
               description: summary,
               end,
-              organizar: 'FX',
               start,
               summary
             }
