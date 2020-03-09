@@ -27,10 +27,17 @@ export default {
 
   experience: [
     {
+      url: '//outthislife.com',
+      company: 'OutThisLife',
+      position: 'Owner',
+      date: 'current'
+    },
+
+    {
       url: '//www.invisionapp.com',
       company: 'InVisionApp',
       position: 'Sr. Full Stack',
-      date: 'current'
+      date: '2016-2020'
     },
 
     {
