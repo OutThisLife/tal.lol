@@ -17,9 +17,9 @@ module.exports = withPlugins(
   {
     devIndicators: { buildActivity: false },
     eslint: { ignoreDuringBuilds: true },
-
     experimental: { styledComponents: true },
     generateBuildId: async () => VERCEL_GIT_COMMIT_SHA,
+
     async headers() {
       const baseHeaders = [
         {
