@@ -51,6 +51,7 @@ export default createGlobalStyle`
   }
   
   html {
+    user-select: none;
     font-family: 'Nanum Gothic Coding', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -101,7 +102,7 @@ export default createGlobalStyle`
       background: ${palettes.primary};
 
       &:active {
-        filter: invert(1)
+        background: #ac91ff85
       }
     }
   }
