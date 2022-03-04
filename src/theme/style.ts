@@ -10,6 +10,18 @@ export default createGlobalStyle`
     --min-font-size: 18;
     --max-font-size: 20;
 
+    --primary-h: 329deg;
+    --primary-s: 100%;
+    --primary-l: 72%;
+    --primary: hsl(var(--primary-h) var(--primary-s) var(--primary-l));
+    
+    --fg-h: 318deg;
+    --fg-s: 5%;
+    --fg-l: 30%;
+    --fg: hsl(var(--fg-h) var(--fg-s) var(--fg-l));
+    
+    --bg: hsl(0deg, 0%, 100%);
+
     @media (max-width: ${breakpoints.tablet}px) {
       --font-scale: 10;
     }
@@ -75,9 +87,11 @@ export default createGlobalStyle`
   }
 
   a {
+    --stroke: hsla(var(--primary-h), var(--primary-s), var(--primary-l), .2);
+
     color: ${palettes.primary};
     text-decoration: none;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.2)) center calc(100% + 0px) / 100% 1px no-repeat;
+    background: linear-gradient(to right, var(--stroke, currentColor) 50%, var(--stroke, currentColor)) center calc(100% + 0px) / 100% 1px no-repeat;
 
     &:hover {
       color: ${palettes.bg};

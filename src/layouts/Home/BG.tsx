@@ -2,15 +2,14 @@ import type { Props as CanvasProps } from '@react-three/fiber'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Suspense, useRef } from 'react'
 import { Mesh } from 'three'
-import { palettes } from '~/theme/defines'
 
 const Scene = () => {
   const ref = useRef<Mesh>()
 
   useFrame(() => {
     if (ref.current instanceof Mesh) {
-      ref.current.rotation.x += 0.0001
-      ref.current.rotation.z -= 0.0001
+      ref.current.rotation.x += 0.001
+      ref.current.rotation.z -= 0.001
     }
   })
 
@@ -19,8 +18,8 @@ const Scene = () => {
       <mesh {...{ ref }}>
         <boxGeometry args={[1, 1, 1]} />
         <meshBasicMaterial
-          color={palettes.fg}
-          opacity={0.1}
+          color="#ff72ba"
+          opacity={0.15}
           transparent
           wireframe
         />

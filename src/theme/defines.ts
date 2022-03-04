@@ -1,7 +1,7 @@
 export const palettes = {
-  bg: '#fff',
-  fg: '#000',
-  primary: '#00f'
+  bg: 'var(--bg)',
+  fg: 'var(--fg)',
+  primary: 'var(--primary)'
 }
 
 export const breakpoints = {
