@@ -34,9 +34,13 @@ export default styled.main`
       }
 
       h1 {
-        font-size: 4rem;
+        font-size: 3rem;
         line-height: 1;
         margin: 0 0 1rem;
+
+        @media (min-width: ${prop('theme.breakpoints.tablet')}px) {
+          font-size: 4rem;
+        }
       }
 
       h2 {
