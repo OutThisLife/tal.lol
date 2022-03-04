@@ -2,8 +2,10 @@ import styled from 'styled-components'
 import { prop } from 'styled-tools'
 
 export default styled.main`
+  --gap-ratio: 12;
+
   display: grid;
-  grid-row-gap: calc(5 * var(--vsq));
+  grid-row-gap: calc(var(--gap-ratio) * var(--vsq));
   grid-template-columns: repeat(40, 1fr);
   margin: auto;
   max-width: calc(100 * var(--vsq));
@@ -11,6 +13,10 @@ export default styled.main`
   place-content: center;
   place-items: center;
   text-align: center;
+
+  @media (min-width: ${prop('theme.breakpoints.tablet')}px) {
+    --gap-ratio: 5;
+  }
 
   > {
     * {
