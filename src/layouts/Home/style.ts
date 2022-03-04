@@ -9,7 +9,7 @@ export default styled.main`
   grid-template-columns: repeat(40, 1fr);
   margin: auto;
   max-width: calc(100 * var(--vsq));
-  padding-block: calc(15 * var(--vsq));
+  padding-block: calc(10 * var(--vsq));
   place-content: center;
   place-items: center;
   text-align: center;
