@@ -65,6 +65,8 @@ export default function Index() {
           lnkd: '//linkedin.com/in/talasan'
         }}
         projects={[
+          'NuclearNerds',
+          'OddBirds',
           'Drinkworks',
           'InVisionApp',
           'iFLY',
