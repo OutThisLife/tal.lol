@@ -8,11 +8,10 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider {...{ theme }}>
       <Head>
-        <title key="title">Talasan Nicholson</title>
+        <title>Talasan Brooke Nicholson</title>
 
         <meta
           content="I am a full stack engineer and have been coding since I was ~12."
-          key="desc"
           name="desc"
         />
 
