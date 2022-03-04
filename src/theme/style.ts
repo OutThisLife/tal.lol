@@ -20,7 +20,10 @@ export default createGlobalStyle`
     --fg-l: 30%;
     --fg: hsl(var(--fg-h) var(--fg-s) var(--fg-l));
     
-    --bg: hsl(0deg, 0%, 100%);
+    --bg-h: 0deg;
+    --bg-s: 0%;
+    --bg-l: 100%;
+    --bg: hsl(var(--bg-h) var(--bg-s) var(--bg-l));
 
     @media (max-width: ${breakpoints.tablet}px) {
       --font-scale: 10;
