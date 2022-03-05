@@ -17,7 +17,7 @@ const Scene = () => {
 
   return (
     <mesh {...{ ref, scale }}>
-      <sphereGeometry args={[2 / 3, 50 / 3, 1]} />
+      <sphereGeometry args={[0.5, 85, 1]} />
       <meshBasicMaterial color="#ff72ba" opacity={0.15} transparent wireframe />
     </mesh>
   )
