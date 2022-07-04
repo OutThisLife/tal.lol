@@ -81,7 +81,7 @@ export default function Index() {
           'GraphQL, SQL, NoSQL, MongoDB',
           'Ps, Ai, Sketch, Cinima 4D, Maya'
         ]}
-        title="Talasan Brooke Nicholson"
+        title="Talasan Brooklyn Nicholson"
       />
     </Suspense>
   )
