@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react'
+import { Suspense, lazy } from 'react'
 import StyledHome from './style'
 
 const BG = lazy(() => import('./BG'))
@@ -106,7 +106,15 @@ export default function Home({
 
               <ul>
                 {projects.map(i => (
-                  <li dangerouslySetInnerHTML={{ __html: i }} key={i} />
+                  <li key={JSON.stringify(i)}>
+                    {typeof i === 'string' ? (
+                      i
+                    ) : (
+                      <a href={i.url} rel="noopener noreferrer" target="_blank">
+                        {i.name}
+                      </a>
+                    )}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -138,7 +146,7 @@ interface HomeProps {
   }[]
   highlights?: string[]
   links?: Record<string, string>
-  projects?: string[]
+  projects?: Array<string | { name: string; url: string }>
   skills?: string[]
   title: string
 }

@@ -66,7 +66,7 @@ export default function Index() {
         }}
         projects={[
           'So&So',
-          'NuclearNerds',
+          { name: 'NuclearNerds', url: '//nuclearnerds.io' },
           'OddBirds',
           'Drinkworks',
           'InVisionApp',
