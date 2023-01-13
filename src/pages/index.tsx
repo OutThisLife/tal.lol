@@ -59,10 +59,10 @@ export default function Index() {
           'Live coding w/ top designers'
         ]}
         links={{
-          articles: '//medium.com/@talasan',
-          git: '//github.com/outthislife',
-          gmail: 'mailto:talasan.nicholson@gmail.com',
-          lnkd: '//linkedin.com/in/talasan'
+          mail: 'mailto:brooklyn.bb.nicholson@gmail.com',
+          code: '//github.com/outthislife',
+          lnkd: '//linkedin.com/in/bbbrooklyn',
+          articles: '//medium.com/@babybrooklyn',
         }}
         projects={[
           'So&So',
