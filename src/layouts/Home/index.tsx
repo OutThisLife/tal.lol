@@ -106,7 +106,7 @@ export default function Home({
 
               <ul>
                 {projects.map(i => (
-                  <li key={JSON.stringify(i)}>
+                  <li key={typeof i === 'string' ? i : i.name}>
                     {typeof i === 'string' ? (
                       i
                     ) : (
