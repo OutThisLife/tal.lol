@@ -59,10 +59,10 @@ export default function Index() {
           'Live coding w/ top designers'
         ]}
         links={{
-          mail: 'mailto:brooklyn.bb.nicholson@gmail.com',
           code: '//github.com/outthislife',
           lnkd: '//linkedin.com/in/bbbrooklyn',
-          articles: '//medium.com/@babybrooklyn',
+          mail: 'mailto:brooklyn.bb.nicholson@gmail.com',
+          medium: '//medium.com/@babybrooklyn'
         }}
         projects={[
           'So&So',
@@ -71,7 +71,7 @@ export default function Index() {
           'Drinkworks',
           'InVisionApp',
           'iFLY',
-          'designbetter',
+          { name: 'designbetter', url: '//designbetter.co' },
           'Yeti Coolers ',
           'AT&T'
         ]}
