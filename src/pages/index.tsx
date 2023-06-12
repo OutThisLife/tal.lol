@@ -66,6 +66,7 @@ export default function Index() {
         }}
         projects={[
           'So&So',
+          { name: 'clubnft', url: '//clubnft.com' },
           { name: 'NuclearNerds', url: '//nuclearnerds.io' },
           'OddBirds',
           'Drinkworks',
