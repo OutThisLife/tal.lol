@@ -8,7 +8,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider {...{ theme }}>
       <Head>
-        <title>Talasan Brooklyn Nicholson</title>
+        <title>Brooklyn Nicholson</title>
 
         <meta
           content="I am a full stack engineer and have been coding since I was ~12."
