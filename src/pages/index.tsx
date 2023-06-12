@@ -9,6 +9,17 @@ export default function Index() {
         experience={[
           { company: 'outthislife', date: 'now', position: '*' },
           {
+            company: 'ClubNFT',
+            date: '2022-2023',
+            position: 'Sr Full Stack',
+            url: '//www.clubnft.com'
+          },
+          {
+            company: 'Drinkworks',
+            date: '2020-2022',
+            position: 'Sr Full Stack'
+          },
+          {
             company: 'InVisionApp',
             date: '2017-2020',
             position: 'Sr Full Stack',
@@ -66,7 +77,6 @@ export default function Index() {
         }}
         projects={[
           'So&So',
-          { name: 'clubnft', url: '//clubnft.com' },
           { name: 'NuclearNerds', url: '//nuclearnerds.io' },
           'OddBirds',
           'Drinkworks',
